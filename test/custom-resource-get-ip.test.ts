@@ -14,7 +14,7 @@ test('CustomResourceGetEIP testing', () => {
     regions: ['us-east-1'],
     companyIps: ['1.2.3.4'],
   });
-  cr.getIps();
+  cr.getips();
 
 
   expect(assertions.Template.fromStack(stack).toJSON()).toMatchSnapshot();

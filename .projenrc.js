@@ -37,6 +37,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'aws-sdk-client-mock-jest@^2.0.0',
     'esbuild',
   ],
+  bundledDeps: [
+    '@aws-sdk/client-ec2',
+    '@types/aws-lambda',
+    'aws-lambda',
+  ],
 });
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log', 'coverage'];

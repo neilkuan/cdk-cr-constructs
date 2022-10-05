@@ -71,6 +71,11 @@
     "@types/aws-lambda": "^8.10.106",
     "aws-lambda": "^1.0.7"
   },
+  "bundledDependencies": [
+    "@aws-sdk/client-ec2",
+    "@types/aws-lambda",
+    "aws-lambda"
+  ],
   "keywords": [
     "awscdk",
     "cdk",

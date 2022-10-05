@@ -12,13 +12,13 @@ import {
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
-export interface CustomResourceGetEIPOptions {
+export interface ICustomResourceGetEIPOptions {
   companyIps?: string[];
   regions?: string[];
 }
 export class CustomResourceGetEIP extends Construct {
   outputs: CustomResource;
-  constructor(scope: Construct, id: string, props?: CustomResourceGetEIPOptions) {
+  constructor(scope: Construct, id: string, props?: ICustomResourceGetEIPOptions) {
     super(scope, id);
     const onEvent = new aws_lambda_nodejs.NodejsFunction(this, `${id}GetEIP`, {
       entry: path.join(__dirname, 'lambda/geteip-handler.ts'),
@@ -69,7 +69,7 @@ export class CustomResourceGetEIP extends Construct {
    * @returns Token.asList(this.outputs.getAtt('IP_LIST'));
    *
    */
-  public getIps() {
+  public getips() {
     return Token.asList(this.outputs.getAtt('IP_LIST'));
   }
 }

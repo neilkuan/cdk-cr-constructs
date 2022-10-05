@@ -115,6 +115,18 @@
       "type": "build"
     },
     {
+      "name": "@aws-sdk/client-ec2",
+      "type": "bundled"
+    },
+    {
+      "name": "@types/aws-lambda",
+      "type": "bundled"
+    },
+    {
+      "name": "aws-lambda",
+      "type": "bundled"
+    },
+    {
       "name": "@types/prettier",
       "version": "2.6.0",
       "type": "override"

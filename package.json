@@ -1,9 +1,9 @@
 {
-  "name": "cdk-cf-constructs",
+  "name": "cdk-cr-constructs",
   "description": "aws cdk library for custom resource constructs.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neilkuan/cdk-cf-constructs.git"
+    "url": "https://github.com/neilkuan/cdk-cr-constructs.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -132,8 +132,8 @@
     "outdir": "dist",
     "targets": {
       "python": {
-        "distName": "cdk-cf-constructs",
-        "module": "cdk_cf_constructs"
+        "distName": "cdk-cr-constructs",
+        "module": "cdk_cr_constructs"
       }
     },
     "tsc": {

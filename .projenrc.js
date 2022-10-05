@@ -4,9 +4,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'guan840912@gmail.com',
   cdkVersion: '2.44.0',
   defaultReleaseBranch: 'main',
-  name: 'cdk-cf-constructs',
-  repositoryUrl: 'https://github.com/neilkuan/cdk-cf-constructs.git',
-
+  name: 'cdk-cr-constructs',
+  repositoryUrl: 'https://github.com/neilkuan/cdk-cr-constructs.git',
   deps: [
     'aws-lambda',
     '@types/aws-lambda',
@@ -27,8 +26,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     allowedUsernames: ['neilkuan'],
   },
   publishToPypi: {
-    distName: 'cdk-cf-constructs',
-    module: 'cdk_cf_constructs',
+    distName: 'cdk-cr-constructs',
+    module: 'cdk_cr_constructs',
   },
   workflowNodeVersion: '^14.17.0',
   majorVersion: 2,

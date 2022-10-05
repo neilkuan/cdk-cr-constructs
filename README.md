@@ -1,10 +1,10 @@
-## `cdk-cf-constructs` 
+## `cdk-cr-constructs` 
 This Construct is collect custom resource
 
 ### Example for CustomResourceGetEIP
 ```ts
 import { App, Stack, CfnOutput, Duration, aws_iam } from 'aws-cdk-lib';
-import { CustomResourceGetEIP } from 'cdk-cf-constructs';
+import { CustomResourceGetEIP } from 'cdk-cr-constructs';
 const env = {
   region: process.env.CDK_DEFAULT_REGION,
   account: process.env.CDK_DEFAULT_ACCOUNT,

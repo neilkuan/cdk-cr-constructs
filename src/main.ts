@@ -59,6 +59,12 @@ export class CustomResourceGetEIP extends Construct {
     });
 
   }
+
+  /**
+   *
+   * @returns Token.asList(this.outputs.getAtt('IP_LIST'));
+   *
+   */
   public getIps() {
     return Token.asList(this.outputs.getAtt('IP_LIST'));
   }

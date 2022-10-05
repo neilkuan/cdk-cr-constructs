@@ -12,8 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@types/aws-lambda',
     '@aws-sdk/client-ec2',
   ],
-  description: '',
-  release: false,
+  description: 'aws cdk library for custom resource constructs.',
   keywords: ['awscdk', 'eip', 'custom-resource', 'lambda'],
   compat: true,
   stability: 'experimental',
@@ -36,6 +35,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   devDeps: [
     'aws-sdk-client-mock@^2.0.0',
     'aws-sdk-client-mock-jest@^2.0.0',
+    'esbuild',
   ],
 });
 

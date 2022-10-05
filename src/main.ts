@@ -24,6 +24,10 @@ export class CustomResourceGetEIP extends Construct {
       entry: path.join(__dirname, 'lambda/geteip-handler.ts'),
       handler: 'handler',
       runtime: aws_lambda.Runtime.NODEJS_16_X,
+      bundling: {
+        forceDockerBundling: false,
+        minify: true,
+      },
     });
 
     const myProvider = new custom_resources.Provider(this, `${id}MyProvider`, {

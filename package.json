@@ -1,12 +1,13 @@
 {
   "name": "cdk-cf-constructs",
-  "description": "",
+  "description": "aws cdk library for custom resource constructs.",
   "repository": {
     "type": "git",
     "url": "https://github.com/neilkuan/cdk-cf-constructs.git"
   },
   "scripts": {
     "build": "npx projen build",
+    "bump": "npx projen bump",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -21,8 +22,10 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
+    "release": "npx projen release",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
+    "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen"
@@ -41,6 +44,7 @@
     "aws-sdk-client-mock": "^2.0.0",
     "aws-sdk-client-mock-jest": "^2.0.0",
     "constructs": "10.0.5",
+    "esbuild": "^0.15.10",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^3.5.1",
@@ -54,6 +58,7 @@
     "json-schema": "^0.4.0",
     "npm-check-updates": "^15",
     "projen": "^0.63.5",
+    "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.8.4"
   },

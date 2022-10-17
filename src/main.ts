@@ -69,7 +69,7 @@ export class CustomResourceGetEIP extends Construct {
    * @returns Token.asList(this.outputs.getAtt('IP_LIST'));
    *
    */
-  public getips() {
+  public ipList() {
     return Token.asList(this.outputs.getAtt('IP_LIST'));
   }
 }

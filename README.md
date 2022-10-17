@@ -11,9 +11,9 @@ const env = {
 };
 const app = new App();
 const stack = new Stack(app, 'testing-stack', { env });
-const getips = new CustomResourceGetEIP(stack, 'CustomResourceGetEIP', {
+const getIps = new CustomResourceGetEIP(stack, 'CustomResourceGetEIP', {
   /**
-   * Discory us-east-1 Elastic Ips. 
+   * Discovery us-east-1 Elastic Ips. 
    */
   regions: ['us-east-1'],
   /**
@@ -33,7 +33,7 @@ role.addToPolicy(new aws_iam.PolicyStatement({
   actions: ['*'],
   conditions: {
     IpAddress: {
-      'aws:SourceIp': this.getIps(),
+      'aws:SourceIp': this.ipList(),
     },
   },
 }));

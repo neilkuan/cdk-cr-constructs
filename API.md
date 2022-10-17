@@ -43,7 +43,7 @@ new CustomResourceGetEIP(scope: Construct, id: string, props?: ICustomResourceGe
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-cr-constructs.CustomResourceGetEIP.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-cr-constructs.CustomResourceGetEIP.getips">getips</a></code> | *No description.* |
+| <code><a href="#cdk-cr-constructs.CustomResourceGetEIP.ipList">ipList</a></code> | *No description.* |
 
 ---
 
@@ -55,10 +55,10 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `getips` <a name="getips" id="cdk-cr-constructs.CustomResourceGetEIP.getips"></a>
+##### `ipList` <a name="ipList" id="cdk-cr-constructs.CustomResourceGetEIP.ipList"></a>
 
 ```typescript
-public getips(): string[]
+public ipList(): string[]
 ```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>

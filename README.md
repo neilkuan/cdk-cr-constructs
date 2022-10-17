@@ -33,7 +33,7 @@ role.addToPolicy(new aws_iam.PolicyStatement({
   actions: ['*'],
   conditions: {
     IpAddress: {
-      'aws:SourceIp': this.ipList(),
+      'aws:SourceIp': getIps.ipList(),
     },
   },
 }));

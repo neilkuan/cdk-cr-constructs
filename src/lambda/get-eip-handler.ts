@@ -9,6 +9,7 @@ export async function handler(event: CloudFormationCustomResourceEvent) {
   const regionList = event.ResourceProperties.REGIONS;
 
   let ipList: string[] = [];
+  // let res = {};
 
 
   if (companyIps) {
@@ -27,36 +28,48 @@ export async function handler(event: CloudFormationCustomResourceEvent) {
   }
 
   if (regionList) {
-    await LookUpEips(regionList, ipList);
+    return LookUpEips(regionList, ipList, stackName );
   }
-
-  console.log(ipList);
-  const uniqIpList = [...new Set(ipList)];
-  console.log('Unit Ips Values', uniqIpList);
 
   return {
     PhysicalResourceId: `Custom::GetEIP${stackName}`,
     Data: {
-      IP_LIST: uniqIpList,
+      IP_LIST: ipList,
     },
   };
 }
 
-export async function LookUpEips(regionList: any, ipList: string[]) {
+export async function LookUpEips(regionList: any, ipList: string[], stackName: string) {
   try {
     const regionListJson: string[] = JSON.parse(regionList);
-    regionListJson.forEach(async region => {
+    const promises = [];
+    for (const region of regionListJson) {
       console.log('Now Run region: ', region);
       const client = new EC2Client({ region: region });
 
-      const address = await client.send(new DescribeAddressesCommand({}));
+      promises.push(client.send(new DescribeAddressesCommand({})));
+    }
+    const addresses = await Promise.all(promises);
+    for (const address of addresses) {
       if (address.Addresses) {
-        address.Addresses.forEach(ip => {
+        for (const ip of address.Addresses) {
           ipList.push(`${ip.PublicIp}/32`);
-        });
+        }
       }
-    });
+    }
+
+    console.log('lookupEips', ipList);
+    const uniqIpList = [...new Set(ipList)];
+    console.log('Unit Ips Values', uniqIpList);
+    return {
+      PhysicalResourceId: `Custom::GetEIP${stackName}`,
+      Data: {
+        IP_LIST: uniqIpList,
+      },
+    };
   } catch (e) {
+    console.log(e);
+    throw e;
   }
 
 }

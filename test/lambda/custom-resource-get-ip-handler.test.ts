@@ -31,7 +31,7 @@ describe('snapshot-cleanup-handler', () => {
         COMPANY_IPS: '[\"1.2.3.4\"]',
       },
     });
-    expect(res).toMatchObject({
+    expect(res).toEqual({
       PhysicalResourceId: 'Custom::GetEIPTestStack',
       Data: {
         IP_LIST: ['1.2.3.4/32'],
@@ -39,7 +39,7 @@ describe('snapshot-cleanup-handler', () => {
     });
   });
 
-  it('Test not give company ip', async () => {
+  it('Test not give regions ip', async () => {
     ec2Mock.on(DescribeAddressesCommand).resolves({});
     const res = await handler({
       RequestType: 'Create',
@@ -55,7 +55,7 @@ describe('snapshot-cleanup-handler', () => {
         COMPANY_IPS: '[\"1.2.3.4\"]',
       },
     });
-    expect(res).toMatchObject({
+    expect(res).toEqual({
       PhysicalResourceId: 'Custom::GetEIPTestStack',
       Data: {
         IP_LIST: ['1.2.3.4/32'],
@@ -63,7 +63,7 @@ describe('snapshot-cleanup-handler', () => {
     });
   });
 
-  it('Test give region', async () => {
+  it.only('Test give region', async () => {
     ec2Mock.on(DescribeAddressesCommand).resolves({
       Addresses: [{
         PublicIp: '1.1.1.1',
@@ -84,7 +84,7 @@ describe('snapshot-cleanup-handler', () => {
         REGIONS: '[\"ap-northeast-1\", \"us-east-1\"]',
       },
     });
-    expect(res).toMatchObject({
+    expect(res).toEqual({
       PhysicalResourceId: 'Custom::GetEIPTestStack',
       Data: {
         IP_LIST: ['1.2.3.4/32', '1.1.1.1/32'],

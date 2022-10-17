@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import * as path from 'path';
 import {
   Stack,
@@ -21,7 +22,7 @@ export class CustomResourceGetEIP extends Construct {
   constructor(scope: Construct, id: string, props?: ICustomResourceGetEIPOptions) {
     super(scope, id);
     const onEvent = new aws_lambda_nodejs.NodejsFunction(this, `${id}GetEIP`, {
-      entry: path.join(__dirname, 'lambda/geteip-handler.ts'),
+      entry: fs.existsSync(path.join(__dirname, 'lambda/get-eip-handler.ts')) ? path.join(__dirname, 'lambda/get-eip-handler.ts') : path.join(__dirname, 'lambda/get-eip-handler.js'),
       handler: 'handler',
       runtime: aws_lambda.Runtime.NODEJS_16_X,
       bundling: {

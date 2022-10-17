@@ -1,6 +1,6 @@
 import { DescribeAddressesCommand, EC2Client } from '@aws-sdk/client-ec2';
 import { mockClient } from 'aws-sdk-client-mock';
-import { handler } from '../../src/lambda/geteip-handler';
+import { handler } from '../../src/lambda/get-eip-handler';
 import 'aws-sdk-client-mock-jest';
 // https://github.com/m-radzikowski/aws-sdk-client-mock
 
@@ -11,7 +11,7 @@ describe('snapshot-cleanup-handler', () => {
     ec2Mock.reset();
   });
 
-  it('Test give commany ip', async () => {
+  it('Test give company ip', async () => {
     ec2Mock.on(DescribeAddressesCommand).resolves({
       Addresses: [{
         PublicIp: '1.1.1.1',
@@ -39,7 +39,7 @@ describe('snapshot-cleanup-handler', () => {
     });
   });
 
-  it('Test not give commany ip', async () => {
+  it('Test not give company ip', async () => {
     ec2Mock.on(DescribeAddressesCommand).resolves({});
     const res = await handler({
       RequestType: 'Create',

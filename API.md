@@ -132,8 +132,22 @@ public readonly outputs: CustomResource;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#cdk-cr-constructs.ICustomResourceGetEIPOptions.property.alwaysUpdate">alwaysUpdate</a></code> | <code>boolean</code> | Indicate whether always update the custom resource to get the new stack output. |
 | <code><a href="#cdk-cr-constructs.ICustomResourceGetEIPOptions.property.companyIps">companyIps</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-cr-constructs.ICustomResourceGetEIPOptions.property.regions">regions</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `alwaysUpdate`<sup>Optional</sup> <a name="alwaysUpdate" id="cdk-cr-constructs.ICustomResourceGetEIPOptions.property.alwaysUpdate"></a>
+
+```typescript
+public readonly alwaysUpdate: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Indicate whether always update the custom resource to get the new stack output.
 
 ---
 

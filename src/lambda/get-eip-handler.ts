@@ -1,4 +1,4 @@
-import { DescribeAddressesCommand, EC2Client } from '@aws-sdk/client-ec2';
+import { DescribeAddressesCommand, EC2Client, DescribeAddressesCommandOutput } from '@aws-sdk/client-ec2';
 import { CloudFormationCustomResourceEvent } from 'aws-lambda';
 
 export async function handler(event: CloudFormationCustomResourceEvent) {
@@ -9,7 +9,6 @@ export async function handler(event: CloudFormationCustomResourceEvent) {
   const regionList = event.ResourceProperties.REGIONS;
 
   let ipList: string[] = [];
-  // let res = {};
 
 
   if (companyIps) {
@@ -42,7 +41,7 @@ export async function handler(event: CloudFormationCustomResourceEvent) {
 export async function LookUpEips(regionList: any, ipList: string[], stackName: string) {
   try {
     const regionListJson: string[] = JSON.parse(regionList);
-    const promises = [];
+    let promises: Promise<DescribeAddressesCommandOutput>[] = [];
     for (const region of regionListJson) {
       console.log('Now Run region: ', region);
       const client = new EC2Client({ region: region });

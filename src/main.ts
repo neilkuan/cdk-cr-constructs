@@ -14,8 +14,14 @@ import {
 import { Construct } from 'constructs';
 
 export interface ICustomResourceGetEIPOptions {
-  companyIps?: string[];
-  regions?: string[];
+  readonly companyIps?: string[];
+  readonly regions?: string[];
+
+  /**
+   * Indicate whether always update the custom resource to get the new stack output
+   * @default true
+   */
+  readonly alwaysUpdate?: boolean;
 }
 export class CustomResourceGetEIP extends Construct {
   outputs: CustomResource;
@@ -60,6 +66,7 @@ export class CustomResourceGetEIP extends Construct {
         STACK_NAME: Stack.of(this).stackName,
         COMPANY_IPS: Stack.of(this).toJsonString(props?.companyIps),
         REGIONS: Stack.of(this).toJsonString(props?.regions),
+        randomString: props?.alwaysUpdate === false ? undefined : randomString(),
       },
     });
 
@@ -73,4 +80,9 @@ export class CustomResourceGetEIP extends Construct {
   public ipList() {
     return Token.asList(this.outputs.getAtt('IP_LIST'));
   }
+}
+
+function randomString() {
+  // Crazy
+  return Math.random().toString(36).replace(/[^a-z0-9]+/g, '');
 }

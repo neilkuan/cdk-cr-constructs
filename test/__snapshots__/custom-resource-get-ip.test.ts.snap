@@ -114,7 +114,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "d24aab21f638437227c07509f9cf5020fb0c9e3bfb8657b360b565c95b8a65e4.zip",
+          "S3Key": "f9e22a5b5773ef138292e5e1e84e6d0f91e1eb622b41aca58b5768a79ced04ed.zip",
         },
         "Environment": Object {
           "Variables": Object {

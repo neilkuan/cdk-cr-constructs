@@ -29,7 +29,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'cdk-cr-constructs',
     module: 'cdk_cr_constructs',
   },
-  workflowNodeVersion: '^14.17.0',
+  workflowNodeVersion: '^16.20.0',
   majorVersion: 2,
   devDeps: [
     'aws-sdk-client-mock@^2.0.0',

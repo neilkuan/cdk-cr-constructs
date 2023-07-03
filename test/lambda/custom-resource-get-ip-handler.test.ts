@@ -1,11 +1,13 @@
 import { DescribeAddressesCommand, EC2Client } from '@aws-sdk/client-ec2';
-import { mockClient } from 'aws-sdk-client-mock';
+import { AwsClientStub, mockClient } from 'aws-sdk-client-mock';
 import { handler } from '../../src/lambda/get-eip-handler';
 import 'aws-sdk-client-mock-jest';
 // https://github.com/m-radzikowski/aws-sdk-client-mock
 
 describe('snapshot-cleanup-handler', () => {
-  const ec2Mock = mockClient(EC2Client);
+
+  let ec2Mock: AwsClientStub<EC2Client>;
+  ec2Mock = mockClient(EC2Client);
 
   beforeEach(() => {
     ec2Mock.reset();

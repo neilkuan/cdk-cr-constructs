@@ -9,7 +9,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   deps: [
     'aws-lambda',
     '@types/aws-lambda',
-    '@aws-sdk/client-ec2',
+    '@aws-sdk/client-ec2@^3.363.0',
   ],
   description: 'aws cdk library for custom resource constructs.',
   keywords: ['awscdk', 'eip', 'custom-resource', 'lambda'],
@@ -32,15 +32,23 @@ const project = new awscdk.AwsCdkConstructLibrary({
   workflowNodeVersion: '^16.20.0',
   majorVersion: 2,
   devDeps: [
-    'aws-sdk-client-mock@^2.0.0',
-    'aws-sdk-client-mock-jest@^2.0.0',
+    'aws-sdk-client-mock@^3',
+    'aws-sdk-client-mock-jest@^3',
     'esbuild',
+    'jsii-rosetta@5.0.x',
   ],
   bundledDeps: [
     '@aws-sdk/client-ec2',
     '@types/aws-lambda',
     'aws-lambda',
   ],
+  typescriptVersion: '4.9.5',
+  jsiiVersion: '~5.0.0',
+  tsconfigDev: {
+    compilerOptions: {
+      strictFunctionTypes: true,
+    },
+  },
 });
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log', 'coverage'];

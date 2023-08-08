@@ -44,7 +44,7 @@
     "aws-sdk-client-mock": "^3",
     "aws-sdk-client-mock-jest": "^3",
     "constructs": "10.0.5",
-    "esbuild": "^0.18.18",
+    "esbuild": "^0.18.19",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.8",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -57,7 +57,7 @@
     "jsii-pacmak": "^1.86.1",
     "jsii-rosetta": "~5.0.0",
     "npm-check-updates": "^16",
-    "projen": "^0.72.4",
+    "projen": "^0.72.5",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "4.9.5"

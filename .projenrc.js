@@ -54,5 +54,5 @@ const project = new awscdk.AwsCdkConstructLibrary({
 const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log', 'coverage'];
 project.gitignore.exclude(...common_exclude);
 project.npmignore.exclude(...common_exclude);
-
+project.package.addDevDeps(...['jest@^29', '@types/jest@^29', 'ts-jest@^29']);
 project.synth();

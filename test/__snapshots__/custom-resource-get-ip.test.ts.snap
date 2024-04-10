@@ -114,7 +114,7 @@ exports[`CustomResourceGetEIP testing 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "89b33c6d2f8f5635640069f80597d0c2254ad13e3fc92b818b3bb8268c2020b6.zip",
+          "S3Key": "f03b13026c760c45db29e8ef3ad8228a989cbad95a615057f9e9529571eddfeb.zip",
         },
         "Environment": {
           "Variables": {

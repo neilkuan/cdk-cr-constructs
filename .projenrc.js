@@ -2,7 +2,7 @@ const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Neil Kuan',
   authorAddress: 'guan840912@gmail.com',
-  cdkVersion: '2.44.0',
+  cdkVersion: '2.139.1',
   defaultReleaseBranch: 'main',
   name: 'cdk-cr-constructs',
   repositoryUrl: 'https://github.com/neilkuan/cdk-cr-constructs.git',
@@ -29,7 +29,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'cdk-cr-constructs',
     module: 'cdk_cr_constructs',
   },
-  workflowNodeVersion: '^18.12.0',
+  minNodeVersion: '20.10.0',
+  workflowNodeVersion: '20.10.0',
+  typescriptVersion: '^5',
+  jsiiVersion: '5.3.x',
   majorVersion: 2,
   devDeps: [
     'aws-sdk-client-mock@^3',
@@ -42,8 +45,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@types/aws-lambda',
     'aws-lambda',
   ],
-  typescriptVersion: '4.9.5',
-  jsiiVersion: '~5.0.0',
   tsconfigDev: {
     compilerOptions: {
       strictFunctionTypes: true,

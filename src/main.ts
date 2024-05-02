@@ -30,7 +30,7 @@ export class CustomResourceGetEIP extends Construct {
     const onEvent = new aws_lambda_nodejs.NodejsFunction(this, `${id}GetEIP`, {
       entry: fs.existsSync(path.join(__dirname, 'lambda/get-eip-handler.ts')) ? path.join(__dirname, 'lambda/get-eip-handler.ts') : path.join(__dirname, 'lambda/get-eip-handler.js'),
       handler: 'handler',
-      runtime: aws_lambda.Runtime.NODEJS_16_X,
+      runtime: aws_lambda.Runtime.NODEJS_20_X,
       bundling: {
         forceDockerBundling: false,
         minify: true,

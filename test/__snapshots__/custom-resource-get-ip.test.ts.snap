@@ -20,7 +20,7 @@ exports[`CustomResourceGetEIP testing 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "eb5b005c858404ea0c8f68098ed5dcdf5340e02461f149751d10f59c210d5ef8.zip",
+          "S3Key": "4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35.zip",
         },
         "Handler": "index.handler",
         "Role": {
@@ -29,7 +29,8 @@ exports[`CustomResourceGetEIP testing 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "nodejs14.x",
+        "Runtime": "nodejs18.x",
+        "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -114,7 +115,7 @@ exports[`CustomResourceGetEIP testing 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "56135cf8397998005ad4a9ec50de374d78455d064f8aca453d2f251675d76d1d.zip",
+          "S3Key": "44e30a8e6f0303ea70369808ca9ac2e1512e3691accdeaf1d14c8166ad1413de.zip",
         },
         "Environment": {
           "Variables": {
@@ -128,7 +129,7 @@ exports[`CustomResourceGetEIP testing 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "nodejs16.x",
+        "Runtime": "nodejs20.x",
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -194,7 +195,7 @@ exports[`CustomResourceGetEIP testing 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "e7c95e1a12d903d913ebdd526c735f1ac58b2024882a5562110221fe685ebe85.zip",
+          "S3Key": "3542be390685e0c8353d92ccb5796d343cd93ca946b6b0de798004206a199adc.zip",
         },
         "Description": "AWS CDK resource provider framework - onEvent (TestStack/TestCR/TestCRMyProvider)",
         "Environment": {
@@ -214,7 +215,7 @@ exports[`CustomResourceGetEIP testing 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "nodejs14.x",
+        "Runtime": "nodejs18.x",
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",

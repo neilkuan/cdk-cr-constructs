@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ec2": "^3.363.0",
-    "@types/aws-lambda": "^8.10.147",
+    "@types/aws-lambda": "^8.10.148",
     "aws-lambda": "^1.0.7"
   },
   "bundledDependencies": [
